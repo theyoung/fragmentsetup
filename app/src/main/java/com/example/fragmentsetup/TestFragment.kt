@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.findNavController
 
 
 /**
@@ -19,7 +21,11 @@ class TestFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_test, container, false)
+        val view = inflater.inflate(R.layout.fragment_test, container, false)
+        view.findViewById<Button>(R.id.button).setOnClickListener {
+                view.findNavController().navigate(R.id.action_testFragment_to_secondFragment)
+        }
+        return view
     }
 
 }
