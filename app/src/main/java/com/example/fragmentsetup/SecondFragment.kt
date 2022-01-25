@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.navigation.findNavController
 
 
@@ -25,6 +26,8 @@ class SecondFragment : Fragment() {
         view.findViewById<Button>(R.id.button2).setOnClickListener {
             view.findNavController().navigate(R.id.action_secondFragment_to_thirdFragment)
         }
+        view.findViewById<TextView>(R.id.textView2).text = SecondFragmentArgs.fromBundle(requireArguments()).seValue
+
         return view
     }
 
