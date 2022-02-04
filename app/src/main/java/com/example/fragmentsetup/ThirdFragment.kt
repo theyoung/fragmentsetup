@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.navigation.findNavController
 
 
@@ -24,6 +25,8 @@ class ThirdFragment : Fragment() {
         view.findViewById<Button>(R.id.button3).setOnClickListener {
             view.findNavController().popBackStack()
         }
+        val param = ThirdFragmentArgs.fromBundle(requireArguments()).str
+        view.findViewById<TextView>(R.id.textView3).text = param
         return view
 
     }

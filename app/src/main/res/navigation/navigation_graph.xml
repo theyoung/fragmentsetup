@@ -34,5 +34,9 @@
         android:id="@+id/thirdFragment"
         android:name="com.example.fragmentsetup.ThirdFragment"
         android:label="fragment_third"
-        tools:layout="@layout/fragment_third" />
+        tools:layout="@layout/fragment_third" >
+        <argument
+            android:name="str"
+            app:argType="string" />
+    </fragment>
 </navigation>
