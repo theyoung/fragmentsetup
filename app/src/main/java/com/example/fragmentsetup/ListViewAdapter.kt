@@ -66,10 +66,6 @@ class ListViewAdapter(val context : Context, var list: DataViewModel) : BaseAdap
             true
         }
 
-
-
-
-
         return view;
     }
 

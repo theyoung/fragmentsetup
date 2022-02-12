@@ -15,6 +15,9 @@
             app:destination="@id/secondFragment"
 
             />
+        <action
+            android:id="@+id/action_testFragment_to_recycleFragment"
+            app:destination="@id/recycleFragment" />
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
@@ -37,6 +40,19 @@
         tools:layout="@layout/fragment_third" >
         <argument
             android:name="str"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/recycleFragment"
+        android:name="com.example.fragmentsetup.RecycleFragment"
+        android:label="fragment_recycle"
+        tools:layout="@layout/fragment_recycle" >
+        <action
+            app:popUpTo="@id/testFragment"
+            android:id="@+id/action_recycleFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment" />
+        <argument
+            android:name="seValue"
             app:argType="string" />
     </fragment>
 </navigation>

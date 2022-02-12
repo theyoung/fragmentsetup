@@ -36,11 +36,20 @@ class TestFragment : Fragment() {
         _binding = FragmentTestBinding.inflate(inflater,container,false)
         viewModel = ViewModelProvider(requireActivity()).get(DataViewModel::class.java)
 
+
         binding.button.setOnClickListener {
             val str = binding.editTextTextPersonName.text.toString() ?: "hello"
             viewModel.addMessage(str)
             Toast.makeText(context,viewModel.size.toString(),Toast.LENGTH_SHORT).show()
             val action = TestFragmentDirections.actionTestFragmentToSecondFragment(str)
+            binding.root.findNavController().navigate(action)
+        }
+
+        binding.buttonR.setOnClickListener {
+            val str = binding.editTextTextPersonName.text.toString() ?: "hello"
+            viewModel.addMessage(str)
+            Toast.makeText(context,viewModel.size.toString(),Toast.LENGTH_SHORT).show()
+            val action = TestFragmentDirections.actionTestFragmentToRecycleFragment(str)
             binding.root.findNavController().navigate(action)
         }
 
